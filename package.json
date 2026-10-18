@@ -1,0 +1,39 @@
+{
+  "name": "deedler",
+  "productName": "Deedler",
+  "version": "2.0.0",
+  "description": "O navegador oficial da deedle",
+  "main": "main.js",
+  "author": "deedle",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.deedle.deedler",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3"
+  },
+  "keywords": [],
+  "type": "commonjs"
+}
